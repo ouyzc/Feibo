@@ -45,10 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Interop.MSXML2, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Interop.MSXML2">
+      <HintPath>..\FeiBo.Synchro.Core\lib\Interop.MSXML2.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>lib\Interop.MSXML2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -122,13 +121,11 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="ZM.Core.Ext, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\ZM.Core.Ext.dll</HintPath>
+    <Reference Include="ZM.Core.Ext">
+      <HintPath>..\FeiBo.Synchro.Core\lib\ZM.Core.Ext.dll</HintPath>
     </Reference>
-    <Reference Include="ZM.EAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\ZM.EAPI.dll</HintPath>
+    <Reference Include="ZM.EAPI">
+      <HintPath>..\FeiBo.Synchro.Core\lib\ZM.EAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -143,30 +140,17 @@
     <Compile Include="Areas\ST\Controllers\CommonController.cs" />
     <Compile Include="Areas\ST\Controllers\Rdrecord10Controller.cs" />
     <Compile Include="Areas\ST\Controllers\Rdrecord11Controller.cs" />
-    <Compile Include="Areas\ST\Models\Common.cs" />
-    <Compile Include="Areas\ST\Models\ResultModel.cs" />
-    <Compile Include="Areas\ST\Models\StoreIn.cs" />
-    <Compile Include="Areas\ST\Models\StoreOut.cs" />
-    <Compile Include="Areas\ST\Models\TDB.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TDB.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Areas\ST\STAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\MyFilter.cs" />
-    <Compile Include="Models\MyParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="lib\Interop.MSXML2.dll" />
-    <Content Include="lib\ZM.Core.Ext.dll" />
-    <Content Include="lib\ZM.EAPI.dll" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -181,17 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\ST\Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\ST\Views\web.config" />
-    <Content Include="Areas\ST\Models\TDB.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>TDB.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="Areas\ST\Models\TDB.dbml.layout">
-      <DependentUpon>TDB.dbml</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
@@ -200,6 +176,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FeiBo.Synchro.Core\FeiBo.Synchro.Core.csproj">
+      <Project>{0e0028eb-b2cf-4829-b247-564f781a6bb0}</Project>
+      <Name>FeiBo.Synchro.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Web.Http;
-using FeiBo.Synchro.Api.Areas.ST.Models;
+using System.Threading.Tasks;
+using FeiBo.Synchro.Core.Api;
+using FeiBo.Synchro.Core.Api.Process;
 
 namespace FeiBo.Synchro.Api.Areas.ST.Controllers
 {
     /// <summary>
     /// 产成品入库
     /// </summary>
-    //[Api.Models.MyFilter]
     public class Rdrecord10Controller : CommonController
     {
             /// <summary>
@@ -23,11 +22,34 @@ namespace FeiBo.Synchro.Api.Areas.ST.Controllers
                 return await Task.Run<ResultModel>(() => {
                     try
                     {
-                        return base.common.Rdrecord10_Process(dto);
+                        IProcess process = new Rdrecord10();
+                        return process.Invork(dto);
                     }
                     catch (Exception ex)
                     {
                         return base.common.ReJson(ex);
+                    }
+                });
+            }
+
+            [HttpPost]
+            [System.ComponentModel.Description("创建-产成品入库")]
+            public async Task<Core.RespModel> Add(object dto)
+            {
+                return await Task.Run<Core.RespModel>(() => {
+                    try
+                    {
+                        return new Core.RespModel() {
+                            respCode = "0000",
+                            respDesc = "成功"
+                        };
+                    }
+                    catch (Exception ex)
+                    {
+                        return new Core.RespModel() {
+                            respCode = "8888",
+                            respDesc = ex.Message
+                        } ;
                     }
                 });
             }

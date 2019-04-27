@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Web.Http;
 using System.Threading.Tasks;
-using FeiBo.Synchro.Api.Areas.ST.Models;
+using FeiBo.Synchro.Core.Api;
+using FeiBo.Synchro.Core.Api.Process;
 
 namespace FeiBo.Synchro.Api.Areas.ST.Controllers
 {
     /// <summary>
     /// 红字材料出库单
     /// </summary>
-    //[Api.Models.MyFilter]
     public class Rdrecord11Controller : CommonController
     {
             /// <summary>
@@ -22,7 +22,8 @@ namespace FeiBo.Synchro.Api.Areas.ST.Controllers
                 return await Task.Run<ResultModel>(() => {
                     try
                     {
-                        return base.common.Rdrecord11_Process(dto);
+                        IProcess process = new Rdrecord11();
+                        return process.Invork(dto);
                     }
                     catch (Exception ex)
                     {

@@ -1,21 +1,20 @@
 ﻿using System.Web.Http;
+using FeiBo.Synchro.Core.Api;
 using System.Threading.Tasks;
-using FeiBo.Synchro.Api.Areas.ST.Models;
+using FeiBo.Synchro.Core.Api.Process;
+
 namespace FeiBo.Synchro.Api.Areas.ST.Controllers
 {
     /// <summary>
     /// 公共控制器
     /// </summary>
+    [Models.MyFilter]
     public abstract class CommonController : ApiController
     {
             /// <summary>
             /// 实例化公共方法对象
             /// </summary>
             protected Common common = new Common();
-            /// <summary>
-            /// TDB上下文对象
-            /// </summary>
-            protected TDBDataContext tdb = new TDBDataContext();
             /// <summary>
             /// 创建
             /// </summary>
