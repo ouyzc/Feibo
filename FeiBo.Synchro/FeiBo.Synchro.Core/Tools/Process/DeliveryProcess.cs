@@ -4,9 +4,9 @@ using System.Linq;
 namespace FeiBo.Synchro.Core.Tools.Process
 {
     /// <summary>
-    /// 计量单位
+    /// 发货
     /// </summary>
-    public class UnitProcess : Common, IProcess, IMethod
+    public class DeliveryProcess : Common, IProcess, IMethod
     {
             /// <summary>
             /// 执行
@@ -17,7 +17,6 @@ namespace FeiBo.Synchro.Core.Tools.Process
                 Modify();
                 Del();
             }
-
             /// <summary>
             /// 加载
             /// </summary>
@@ -26,20 +25,21 @@ namespace FeiBo.Synchro.Core.Tools.Process
             {
                 var curr = System.Reflection.MethodBase.GetCurrentMethod();
                 Factory.Run(dbContext => {
+
                     try
                     {
                         switch (op)
                         {
                             case 1:
-                                dbContext.p_zzp_load_AA_ComputationUnit();
+                                dbContext.p_zzp_load_DL_DispatchList();
                                 break;
 
                             case 2:
-                                dbContext.p_zzp_modify_AA_ComputationUnit();
+                                dbContext.p_zzp_modify_DL_DispatchList();
                                 break;
 
                             case 3:
-                                dbContext.p_zzp_del_AA_ComputationUnit();
+                                dbContext.p_zzp_del_DL_DispatchList();
                                 break;
                         }
                     }
@@ -57,9 +57,10 @@ namespace FeiBo.Synchro.Core.Tools.Process
                 Load(1);
                 var curr = System.Reflection.MethodBase.GetCurrentMethod();
                 Factory.Run(dbContext => {
+
                     try
                     {
-                        var _dtos = dbContext.v_zzp_Get_AA_ComputationUnit
+                        var _dtos = dbContext.v_zzp_Get_DL_DispatchList
                                     .Where(w => w.iStatus == 0)
                                     .ToList();
 
@@ -70,15 +71,18 @@ namespace FeiBo.Synchro.Core.Tools.Process
                             {
                                 var _tmp = new
                                 {
-                                    unitName = _dto.unitName,//单位名称
-                                    rate = _dto.rate,//比率
-                                    en = _dto.en,//英文描述
-                                    zh = _dto.zh,//中文描述
-                                    synTime = DateTime.Now.ToLong(),//同步时间
-                                    synPerson = "U8"//同步人：即操作 人
+                                    workOrderName = _dto.workOrderName,
+                                    customerCode = _dto.customerCode,
+                                    sn = _dto.sn,
+                                    virtualSN = _dto.virtualSN,
+                                    deliveryTime = _dto.deliveryTime ? .ToLong(),
+                                    en = _dto.en,
+                                    zh = _dto.zh,
+                                    synTime = DateTime.Now.ToLong(),
+                                    synPerson = "U8"
                                 };
 
-                                base.AddPost(dbContext, base.GetUrl(1, MyParams.UrlType.unit), _tmp, nameof(dbContext.AA_ComputationUnit), nameof(_dto.unitName), _dto.unitName);
+                                base.AddPost(dbContext, base.GetUrl(1, MyParams.UrlType.delivery), _tmp, nameof(dbContext.DL_DispatchList), nameof(_dto.sn), _dto.sn);
                             }
                             catch (Exception exx)
                             {
@@ -103,7 +107,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
                 Factory.Run(dbContext => {
                     try
                     {
-                        var _dtos = dbContext.v_zzp_Get_AA_ComputationUnit
+                        var _dtos = dbContext.v_zzp_Get_DL_DispatchList
                                     .Where(w => w.iStatus == 2)
                                     .ToList();
 
@@ -114,15 +118,18 @@ namespace FeiBo.Synchro.Core.Tools.Process
                             {
                                 var _tmp = new
                                 {
-                                    unitName = _dto.unitName,//单位名称
-                                    rate = _dto.rate,//比率
-                                    en = _dto.en,//英文描述
-                                    zh = _dto.zh,//中文描述
-                                    synTime = DateTime.Now.ToLong(),//同步时间
-                                    synPerson = "U8"//同步人：即操作 人
+                                    workOrderName = _dto.workOrderName,
+                                    customerCode = _dto.customerCode,
+                                    sn = _dto.sn,
+                                    virtualSN = _dto.virtualSN,
+                                    deliveryTime = _dto.deliveryTime ? .ToLong(),
+                                    en = _dto.en,
+                                    zh = _dto.zh,
+                                    synTime = DateTime.Now.ToLong(),
+                                    synPerson = "U8"
                                 };
 
-                                base.UpdatePost(dbContext, base.GetUrl(2, MyParams.UrlType.unit), _tmp, nameof(dbContext.AA_ComputationUnit), nameof(_dto.unitName), _dto.unitName);
+                                base.UpdatePost(dbContext, base.GetUrl(2, MyParams.UrlType.delivery), _tmp, nameof(dbContext.DL_DispatchList), nameof(_dto.sn), _dto.sn);
                             }
                             catch (Exception exx)
                             {
@@ -147,7 +154,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
                 Factory.Run(dbContext => {
                     try
                     {
-                        var _dtos = dbContext.v_zzp_Get_AA_ComputationUnit
+                        var _dtos = dbContext.v_zzp_Get_DL_DispatchList
                                     .Where(w => w.iStatus == 3)
                                     .ToList();
 
@@ -158,12 +165,13 @@ namespace FeiBo.Synchro.Core.Tools.Process
                             {
                                 var _tmp = new
                                 {
-                                    unitName = _dto.unitName,//单位名称
-                                    synTime = DateTime.Now.ToLong(),//同步时间
-                                    synPerson = "U8"//同步人：即操作 人
+                                    sn = _dto.sn,
+                                    virtualSN = _dto.virtualSN,
+                                    synTime = DateTime.Now.ToLong(),
+                                    synPerson = "U8"
                                 };
 
-                                base.DelPost(dbContext, base.GetUrl(3, MyParams.UrlType.unit), _tmp, nameof(dbContext.AA_ComputationUnit), nameof(_dto.unitName), _dto.unitName);
+                                base.DelPost(dbContext, base.GetUrl(3, MyParams.UrlType.delivery), _tmp, nameof(dbContext.DL_DispatchList), nameof(_dto.sn), _dto.sn);
                             }
                             catch (Exception exx)
                             {

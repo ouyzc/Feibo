@@ -8,12 +8,15 @@ using FeiBo.Synchro.Core.Api.Process;
 
 namespace FeiBo.Synchro.Api.Models
 {
+    /// <summary>
+    /// 拦截器
+    /// </summary>
     public class MyFilter :  System.Web.Http.Filters.ActionFilterAttribute
     {
             /// <summary>
             /// 执行前
             /// </summary>
-            /// <param name="actionContext">上下文</param>
+            /// <param name="actionContext">上下文载体</param>
             public override void OnActionExecuting(HttpActionContext actionContext)
             {
                 base.OnActionExecuting(actionContext);
@@ -31,7 +34,7 @@ namespace FeiBo.Synchro.Api.Models
             /// <summary>
             /// 执行后
             /// </summary>
-            /// <param name="actionExecutedContext"></param>
+            /// <param name="actionExecutedContext">上下文载体</param>
             public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
             {
                 base.OnActionExecuted(actionExecutedContext);
@@ -56,7 +59,7 @@ namespace FeiBo.Synchro.Api.Models
                 {
                     try
                     {
-                        Factory.Log_Api(new LogApiModel(0, ExceptionExt.HandleEX(actionExecutedContext.Exception), req.CurrentExecutionFilePath, actionExecutedContext ? .ActionContext ? .ActionDescriptor ? .ControllerDescriptor ? .ControllerName, "", req.UserHostAddress, "MES"));
+                        Factory.Log_Api(new LogApiModel(-1, ExceptionExt.HandleEX(actionExecutedContext.Exception), req.CurrentExecutionFilePath, actionExecutedContext ? .ActionContext ? .ActionDescriptor ? .ControllerDescriptor ? .ControllerName, "", req.UserHostAddress, "MES"));
                     }
                     catch { }
 
@@ -70,7 +73,7 @@ namespace FeiBo.Synchro.Api.Models
             /// <summary>
             /// 获取回调的参数
             /// </summary>
-            /// <param name="actionExecutedContext"></param>
+            /// <param name="actionExecutedContext">上下文载体</param>
             /// <returns></returns>
             private string GetParams(HttpActionExecutedContext actionExecutedContext)
             {

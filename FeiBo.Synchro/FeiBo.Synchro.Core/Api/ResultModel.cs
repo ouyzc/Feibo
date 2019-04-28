@@ -44,7 +44,7 @@ namespace FeiBo.Synchro.Core.Api
             /// <summary>
             /// 单据日期
             /// </summary>
-            public long date { get; set; } = Core.DateTimeExtend.ToLong(DateTime.Now);
+            public long ? date { get; set; } = Core.DateTimeExtend.ToLong(DateTime.Now);
             /// <summary>
             /// 单据号
             /// </summary>

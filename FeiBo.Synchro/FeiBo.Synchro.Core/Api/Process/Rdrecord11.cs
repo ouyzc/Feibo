@@ -26,11 +26,11 @@ namespace FeiBo.Synchro.Core.Api.Process
                     templatenumber = "65",//模板(*)
                     code = dto.code,//单据号
                     date = dto.date.ToDateStr(),//日期
-                    warehousecode = "1003",//仓库-不良品仓-s
+                    warehousecode = "1005",//仓库-不良品仓-s
                     departmentcode = dto.departmentcode,//部门辅助
                     memory = dto.memory,//备注
-                    businesstype = dto.businesstype,// 业务类型
-                    source = "库存",//单据来源
+                    businesstype = dto.businesstype ?? "领料", // 业务类型--[领料/生产倒冲]
+                    source = "库存",//单据来源--[产成品入库单/库存/领料申请单]
                     receivecode = "25", //收发类别编码
                     ordercode = dto.subproducingcode,//生产订单号
                     personcode = dto.personcode,//业务员编码

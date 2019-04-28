@@ -5,6 +5,10 @@ namespace FeiBo.Synchro.Core
     {
 
     }
+
+    /// <summary>
+    /// 工具日志
+    /// </summary>
     public class LogToolsModel
     {
             public string cType { get; set; }
@@ -19,6 +23,9 @@ namespace FeiBo.Synchro.Core
                 this.errmsg = errmsg;
             }
     }
+    /// <summary>
+    /// Api日志
+    /// </summary>
     public class LogApiModel
     {
             public string ip{ get; set; }

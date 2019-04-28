@@ -21,6 +21,19 @@ namespace FeiBo.Synchro.Core.Api.Process
             {
                 base.VerifyDate(dto);
 
+                var warehousecode = "1102";
+                //仓库会有 4 个选择：
+                //产成品库 -s[1102]、产成品库-h[2102]、 半成品库-s[1001]、半成 品库-h[2001]，
+                //逻辑是生产部门为：
+                //海莱特的成品 入产成品库-h[2102]，半成品 入半成品库-h[2001]，，
+                //其余生产的成品,半成 品入产成品库-s[1102]/半成品库-s[1001]
+
+                if (dto.departmentcode == "FB8009")//：海莱特
+                {
+                    warehousecode = "2102";
+                }
+
+
                 var head = new StoreIn.header()
                 {
                     receiveflag = "1",//收发标志(*)
@@ -28,11 +41,11 @@ namespace FeiBo.Synchro.Core.Api.Process
                     templatenumber = "63",//模板(*)
                     code = dto.code,//单据号
                     date = dto.date.ToDateStr(),//日期
-                    warehousecode = dto.warehousecode,//仓库
+                    warehousecode = warehousecode,//仓库
                     departmentcode = dto.departmentcode,//部门辅助
                     memory = dto.memory,//备注
-                    businesstype = dto.businesstype,// 业务类型
-                    source = "生产订单",//单据来源
+                    businesstype = dto.businesstype ?? "成品入库", // 业务类型  []
+                    source = "生产订单",//单据来源 [库存/生产订单]
                     receivecode = "12", //收发类别编码
                     ordercode = dto.subproducingcode,//生产订单号
                     personcode = dto.personcode,//业务员编码

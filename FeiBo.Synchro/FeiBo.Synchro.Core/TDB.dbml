@@ -3,22 +3,109 @@
   <Table Name="dbo.v_zzp_Get_AA_ComputationUnit" Member="v_zzp_Get_AA_ComputationUnit">
     <Type Name="v_zzp_Get_AA_ComputationUnit">
       <Column Name="unitName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="rate" Type="System.Decimal" DbType="Decimal(28,6) NOT NULL" CanBeNull="false" />
-      <Column Name="en" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="zh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="rate" Type="System.Decimal" DbType="Decimal(28,6)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Get_DL_DispatchList" Member="v_zzp_Get_DL_DispatchList">
+    <Type Name="v_zzp_Get_DL_DispatchList">
+      <Column Name="workOrderName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="customerCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="sn" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="virtualSN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="deliveryTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Get_AA_Customer" Member="v_zzp_Get_AA_Customer">
+    <Type Name="v_zzp_Get_AA_Customer">
+      <Column Name="customerCode" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="customerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="contactor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Get_AA_Department" Member="v_zzp_Get_AA_Department">
+    <Type Name="v_zzp_Get_AA_Department">
+      <Column Name="departmentCode" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="departmentName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Get_AA_Inventory" Member="v_zzp_Get_AA_Inventory">
+    <Type Name="v_zzp_Get_AA_Inventory">
+      <Column Name="itemNo" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="itemName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="categoryName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="typeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="statusName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="unitName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="batchControl" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="vendorCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="customerCode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="packingSpec" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="currentBomRevision" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="photo" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="specification" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="dSDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dEDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Get_AA_InventoryClass" Member="v_zzp_Get_AA_InventoryClass">
+    <Type Name="v_zzp_Get_AA_InventoryClass">
+      <Column Name="categoryName" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="typeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Get_AA_Vendor" Member="v_zzp_Get_AA_Vendor">
+    <Type Name="v_zzp_Get_AA_Vendor">
+      <Column Name="vendorCode" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="verdorName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="contactor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.AA_ComputationUnit" Member="AA_ComputationUnit">
     <Type Name="AA_ComputationUnit">
       <Column Name="unitName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="rate" Type="System.Decimal" DbType="Decimal(28,6) NOT NULL" CanBeNull="false" />
-      <Column Name="en" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="zh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="rate" Type="System.Decimal" DbType="Decimal(28,6)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="bFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="bDel" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="errcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
@@ -33,17 +120,16 @@
   <Table Name="dbo.AA_Customer" Member="AA_Customer">
     <Type Name="AA_Customer">
       <Column Name="customerCode" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="customerName" Type="System.String" DbType="NVarChar(98)" CanBeNull="true" />
+      <Column Name="customerName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="contactor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="en" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="bFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="bDel" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="errcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
@@ -55,22 +141,281 @@
       <Column Name="define3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.v_zzp_Get_AA_Customer" Member="v_zzp_Get_AA_Customer">
-    <Type Name="v_zzp_Get_AA_Customer">
-      <Column Name="customerCode" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="customerName" Type="System.String" DbType="NVarChar(98)" CanBeNull="true" />
+  <Table Name="dbo.AA_Department" Member="AA_Department">
+    <Type Name="AA_Department">
+      <Column Name="departmentCode" Type="System.String" DbType="NVarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="departmentName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="errcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dPostTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cMemo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="define1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="define2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="define3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AA_Inventory" Member="AA_Inventory">
+    <Type Name="AA_Inventory">
+      <Column Name="itemNo" Type="System.String" DbType="NVarChar(60) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="itemName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="categoryName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="typeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="statusName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="unitName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="batchControl" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="vendorCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="customerCode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="packingSpec" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="currentBomRevision" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="photo" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="specification" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="dSDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dEDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="errcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dPostTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cMemo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="define1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="define2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="define3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AA_InventoryClass" Member="AA_InventoryClass">
+    <Type Name="AA_InventoryClass">
+      <Column Name="categoryName" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="typeName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="errcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dPostTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cMemo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="define1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="define2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="define3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AA_Vendor" Member="AA_Vendor">
+    <Type Name="AA_Vendor">
+      <Column Name="vendorCode" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="verdorName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="contactor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="description" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="en" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="errcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dPostTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cMemo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="define1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="define2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="define3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DL_DispatchList" Member="DL_DispatchList">
+    <Type Name="DL_DispatchList">
+      <Column Name="workOrderName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="customerCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="sn" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="virtualSN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="deliveryTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="errcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dPostTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cMemo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="define1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="define2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="define3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AA_Bom" Member="AA_Bom">
+    <Type Name="AA_Bom">
+      <Column Name="BomId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="materialItem" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="bomType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="revision" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="activeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="disableDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fromECN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="errcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dPostTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cMemo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="define1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="define2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="define3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PP_workOrder" Member="PP_workOrder">
+    <Type Name="PP_workOrder">
+      <Column Name="MoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MoDId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="salesOrder" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="workOrderName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="linkWorkOrderName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="workshopDepartment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="materialItem" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="preWorkOrder" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="routing" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="bomRevision" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="routingRevision" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Decimal" DbType="Decimal(28,6)" CanBeNull="true" />
+      <Column Name="scheduleStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="errcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dPostTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cMemo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="define1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="define2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="define3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Get_AA_Bom" Member="v_zzp_Get_AA_Bom">
+    <Type Name="v_zzp_Get_AA_Bom">
+      <Column Name="BomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="materialItem" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="bomType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="revision" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="activeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="disableDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fromECN" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Get_PP_workOrder" Member="v_zzp_Get_PP_workOrder">
+    <Type Name="v_zzp_Get_PP_workOrder">
+      <Column Name="MoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MoDId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="salesOrder" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="workOrderName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="linkWorkOrderName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="workshopDepartment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="materialItem" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="preWorkOrder" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="routing" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="bomRevision" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="routingRevision" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Decimal" DbType="Decimal(28,6)" CanBeNull="true" />
+      <Column Name="scheduleStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="zh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Take_AA_BomBillComponent" Member="v_zzp_Take_AA_BomBillComponent">
+    <Type Name="v_zzp_Take_AA_BomBillComponent">
+      <Column Name="BomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="opCode" Type="System.String" DbType="NChar(4)" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="componentItem" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="componentQuantity" Type="System.Decimal" DbType="Decimal(28,6)" CanBeNull="true" />
+      <Column Name="lowQuantity" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="highQuantity" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="keyPartsFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="trackerFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="inputFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="validateTime" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="en" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="zh" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.p_zzp_load_AA_ComputationUnit" Method="p_zzp_load_AA_ComputationUnit">
-    <Return Type="System.Int32" />
-  </Function>
+  <Table Name="dbo.v_zzp_Take_AA_BomComponentSubstitute" Member="v_zzp_Take_AA_BomComponentSubstitute">
+    <Type Name="v_zzp_Take_AA_BomComponentSubstitute">
+      <Column Name="BomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="substituteItem" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="substituteQuantity" Type="System.Decimal" DbType="Decimal(28,6)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="zh" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Take_PP_workOrder_SNS" Member="v_zzp_Take_PP_workOrder_SNS">
+    <Type Name="v_zzp_Take_PP_workOrder_SNS">
+      <Column Name="MoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MoDId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sn" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="virtualSN" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Take_PP_workOrderRequirement" Member="v_zzp_Take_PP_workOrderRequirement">
+    <Type Name="v_zzp_Take_PP_workOrderRequirement">
+      <Column Name="MoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MoDId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="opCode" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="location" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="component" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="keyPartsFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="trackerFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="inputFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="validateTimes" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="usage" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.p_zzp_log_tools" Method="p_zzp_log_tools">
     <Parameter Name="cType" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="cMethod" Type="System.String" DbType="VarChar(MAX)" />
@@ -88,7 +433,85 @@
     <Parameter Name="cParams" Type="System.String" DbType="NVarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.p_zzp_del_AA_ComputationUnit" Method="p_zzp_del_AA_ComputationUnit">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_modify_AA_Vendor" Method="p_zzp_modify_AA_Vendor">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_del_AA_Customer" Method="p_zzp_del_AA_Customer">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_del_AA_Department" Method="p_zzp_del_AA_Department">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_del_AA_Inventory" Method="p_zzp_del_AA_Inventory">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_del_AA_InventoryClass" Method="p_zzp_del_AA_InventoryClass">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_del_AA_Vendor" Method="p_zzp_del_AA_Vendor">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_load_AA_ComputationUnit" Method="p_zzp_load_AA_ComputationUnit">
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.p_zzp_load_AA_Customer" Method="p_zzp_load_AA_Customer">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_load_AA_Department" Method="p_zzp_load_AA_Department">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_load_AA_Inventory" Method="p_zzp_load_AA_Inventory">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_load_AA_InventoryClass" Method="p_zzp_load_AA_InventoryClass">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_load_AA_Vendor" Method="p_zzp_load_AA_Vendor">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_modify_AA_ComputationUnit" Method="p_zzp_modify_AA_ComputationUnit">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_modify_AA_Customer" Method="p_zzp_modify_AA_Customer">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_modify_AA_Department" Method="p_zzp_modify_AA_Department">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_modify_AA_Inventory" Method="p_zzp_modify_AA_Inventory">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_modify_AA_InventoryClass" Method="p_zzp_modify_AA_InventoryClass">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_del_DL_DispatchList" Method="p_zzp_del_DL_DispatchList">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_load_DL_DispatchList" Method="p_zzp_load_DL_DispatchList">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_modify_DL_DispatchList" Method="p_zzp_modify_DL_DispatchList">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_del_AA_Bom" Method="p_zzp_del_AA_Bom">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_del_PP_workOrder" Method="p_zzp_del_PP_workOrder">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_load_AA_Bom" Method="p_zzp_load_AA_Bom">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_load_PP_workOrder" Method="p_zzp_load_PP_workOrder">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_modify_AA_Bom" Method="p_zzp_modify_AA_Bom">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_modify_PP_workOrder" Method="p_zzp_modify_PP_workOrder">
     <Return Type="System.Int32" />
   </Function>
 </Database>

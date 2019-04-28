@@ -32,8 +32,9 @@ namespace FeiBo.Synchro.Api.Areas.ST.Controllers
                 });
             }
 
+            //TODO 测试阶段 noneApi
             [HttpPost]
-            [System.ComponentModel.Description("创建-产成品入库")]
+            [System.ComponentModel.Description("Tools临时测试")]
             public async Task<Core.RespModel> Add(object dto)
             {
                 return await Task.Run<Core.RespModel>(() => {

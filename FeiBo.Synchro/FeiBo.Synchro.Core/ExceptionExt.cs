@@ -2,6 +2,9 @@
 
 namespace FeiBo.Synchro.Core
 {
+    /// <summary>
+    /// 异常扩展
+    /// </summary>
     public class ExceptionExt
     {
             /// <summary>

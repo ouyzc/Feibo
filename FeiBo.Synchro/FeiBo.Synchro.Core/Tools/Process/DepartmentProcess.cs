@@ -4,9 +4,9 @@ using System.Linq;
 namespace FeiBo.Synchro.Core.Tools.Process
 {
     /// <summary>
-    /// 计量单位
+    /// 部门
     /// </summary>
-    public class UnitProcess : Common, IProcess, IMethod
+    public class DepartmentProcess : Common, IProcess, IMethod
     {
             /// <summary>
             /// 执行
@@ -17,7 +17,6 @@ namespace FeiBo.Synchro.Core.Tools.Process
                 Modify();
                 Del();
             }
-
             /// <summary>
             /// 加载
             /// </summary>
@@ -26,20 +25,21 @@ namespace FeiBo.Synchro.Core.Tools.Process
             {
                 var curr = System.Reflection.MethodBase.GetCurrentMethod();
                 Factory.Run(dbContext => {
+
                     try
                     {
                         switch (op)
                         {
                             case 1:
-                                dbContext.p_zzp_load_AA_ComputationUnit();
+                                dbContext.p_zzp_load_AA_Department();
                                 break;
 
                             case 2:
-                                dbContext.p_zzp_modify_AA_ComputationUnit();
+                                dbContext.p_zzp_modify_AA_Department();
                                 break;
 
                             case 3:
-                                dbContext.p_zzp_del_AA_ComputationUnit();
+                                dbContext.p_zzp_del_AA_Department();
                                 break;
                         }
                     }
@@ -57,9 +57,10 @@ namespace FeiBo.Synchro.Core.Tools.Process
                 Load(1);
                 var curr = System.Reflection.MethodBase.GetCurrentMethod();
                 Factory.Run(dbContext => {
+
                     try
                     {
-                        var _dtos = dbContext.v_zzp_Get_AA_ComputationUnit
+                        var _dtos = dbContext.v_zzp_Get_AA_Department
                                     .Where(w => w.iStatus == 0)
                                     .ToList();
 
@@ -70,15 +71,16 @@ namespace FeiBo.Synchro.Core.Tools.Process
                             {
                                 var _tmp = new
                                 {
-                                    unitName = _dto.unitName,//单位名称
-                                    rate = _dto.rate,//比率
+                                    departmentCode = _dto.departmentCode,//部门编码
+                                    departmentName = _dto.departmentName,//部门名称
+                                    description = _dto.description,//描述
                                     en = _dto.en,//英文描述
                                     zh = _dto.zh,//中文描述
                                     synTime = DateTime.Now.ToLong(),//同步时间
                                     synPerson = "U8"//同步人：即操作 人
                                 };
 
-                                base.AddPost(dbContext, base.GetUrl(1, MyParams.UrlType.unit), _tmp, nameof(dbContext.AA_ComputationUnit), nameof(_dto.unitName), _dto.unitName);
+                                base.AddPost(dbContext, base.GetUrl(1, MyParams.UrlType.department), _tmp, nameof(dbContext.AA_Department), nameof(_dto.departmentCode), _dto.departmentCode);
                             }
                             catch (Exception exx)
                             {
@@ -103,7 +105,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
                 Factory.Run(dbContext => {
                     try
                     {
-                        var _dtos = dbContext.v_zzp_Get_AA_ComputationUnit
+                        var _dtos = dbContext.v_zzp_Get_AA_Department
                                     .Where(w => w.iStatus == 2)
                                     .ToList();
 
@@ -114,15 +116,16 @@ namespace FeiBo.Synchro.Core.Tools.Process
                             {
                                 var _tmp = new
                                 {
-                                    unitName = _dto.unitName,//单位名称
-                                    rate = _dto.rate,//比率
+                                    departmentCode = _dto.departmentCode,//部门编码
+                                    departmentName = _dto.departmentName,//部门名称
+                                    description = _dto.description,//描述
                                     en = _dto.en,//英文描述
                                     zh = _dto.zh,//中文描述
                                     synTime = DateTime.Now.ToLong(),//同步时间
                                     synPerson = "U8"//同步人：即操作 人
                                 };
 
-                                base.UpdatePost(dbContext, base.GetUrl(2, MyParams.UrlType.unit), _tmp, nameof(dbContext.AA_ComputationUnit), nameof(_dto.unitName), _dto.unitName);
+                                base.UpdatePost(dbContext, base.GetUrl(2, MyParams.UrlType.department), _tmp, nameof(dbContext.AA_Department), nameof(_dto.departmentCode), _dto.departmentCode);
                             }
                             catch (Exception exx)
                             {
@@ -147,7 +150,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
                 Factory.Run(dbContext => {
                     try
                     {
-                        var _dtos = dbContext.v_zzp_Get_AA_ComputationUnit
+                        var _dtos = dbContext.v_zzp_Get_AA_Department
                                     .Where(w => w.iStatus == 3)
                                     .ToList();
 
@@ -158,12 +161,12 @@ namespace FeiBo.Synchro.Core.Tools.Process
                             {
                                 var _tmp = new
                                 {
-                                    unitName = _dto.unitName,//单位名称
+                                    departmentCode = _dto.departmentCode,//部门编码
                                     synTime = DateTime.Now.ToLong(),//同步时间
                                     synPerson = "U8"//同步人：即操作 人
                                 };
 
-                                base.DelPost(dbContext, base.GetUrl(3, MyParams.UrlType.unit), _tmp, nameof(dbContext.AA_ComputationUnit), nameof(_dto.unitName), _dto.unitName);
+                                base.DelPost(dbContext, base.GetUrl(3, MyParams.UrlType.department), _tmp, nameof(dbContext.AA_Department), nameof(_dto.departmentCode), _dto.departmentCode);
                             }
                             catch (Exception exx)
                             {
