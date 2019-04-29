@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ZM_Dev" Class="TDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.10.5;Initial Catalog=ZM_Dev;User ID=pwd" SettingsObjectName="FeiBo.Synchro.Core.Properties.Settings" SettingsPropertyName="zzpConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.10.5;Initial Catalog=ZM_Dev;User ID=pwd;Enlist=True;Pooling=True;Min Pool Size=0;Max Pool Size=300;Load Balance Timeout=300;Packet Size=1000" SettingsObjectName="FeiBo.Synchro.Core.Properties.Settings" SettingsPropertyName="zzpConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.v_zzp_Get_AA_ComputationUnit" Member="v_zzp_Get_AA_ComputationUnit">
     <Type Name="v_zzp_Get_AA_ComputationUnit">
       <Column Name="unitName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -364,34 +364,6 @@
       <Column Name="iStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.v_zzp_Take_AA_BomBillComponent" Member="v_zzp_Take_AA_BomBillComponent">
-    <Type Name="v_zzp_Take_AA_BomBillComponent">
-      <Column Name="BomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="opCode" Type="System.String" DbType="NChar(4)" CanBeNull="true" />
-      <Column Name="location" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="componentItem" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
-      <Column Name="componentQuantity" Type="System.Decimal" DbType="Decimal(28,6)" CanBeNull="true" />
-      <Column Name="lowQuantity" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="highQuantity" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="keyPartsFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="trackerFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="inputFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="validateTime" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="en" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="zh" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.v_zzp_Take_AA_BomComponentSubstitute" Member="v_zzp_Take_AA_BomComponentSubstitute">
-    <Type Name="v_zzp_Take_AA_BomComponentSubstitute">
-      <Column Name="BomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="substituteItem" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
-      <Column Name="substituteQuantity" Type="System.Decimal" DbType="Decimal(28,6)" CanBeNull="true" />
-      <Column Name="en" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="zh" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.v_zzp_Take_PP_workOrder_SNS" Member="v_zzp_Take_PP_workOrder_SNS">
     <Type Name="v_zzp_Take_PP_workOrder_SNS">
       <Column Name="MoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -413,6 +385,35 @@
       <Column Name="inputFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="validateTimes" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="usage" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Take_AA_BomComponentSubstitute" Member="v_zzp_Take_AA_BomComponentSubstitute">
+    <Type Name="v_zzp_Take_AA_BomComponentSubstitute">
+      <Column Name="ComponentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="substituteItem" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="substituteQuantity" Type="System.Decimal" DbType="Decimal(28,6)" CanBeNull="true" />
+      <Column Name="en" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="zh" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_zzp_Take_AA_BomBillComponent" Member="v_zzp_Take_AA_BomBillComponent">
+    <Type Name="v_zzp_Take_AA_BomBillComponent">
+      <Column Name="BomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ComponentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="opCode" Type="System.String" DbType="NChar(4)" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="componentItem" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="componentQuantity" Type="System.Decimal" DbType="Decimal(3,2) NOT NULL" CanBeNull="false" />
+      <Column Name="lowQuantity" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="highQuantity" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="keyPartsFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="trackerFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="inputFlag" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="validateTime" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="en" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="zh" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </Type>
   </Table>

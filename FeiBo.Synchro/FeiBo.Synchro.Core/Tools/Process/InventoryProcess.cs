@@ -65,6 +65,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
                                     .Where(w => w.iStatus == 0)
                                     .ToList();
 
+
                         //请求
                         foreach (var _dto in _dtos)
                         {

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 11.5" name="TDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.75, 11.5" name="TDB">
   <DataContextMoniker Name="/TDBDataContext" />
   <nestedChildShapes>
     <classShape Id="b45919b7-918b-4a66-bf81-691256f7aa11" isExpanded="false" absoluteBounds="0.75, 0.75, 2, 0.45">
@@ -110,18 +110,6 @@
         <elementListCompartment Id="e36c0ac7-251c-4ea6-b36e-d96a6b7335e9" absoluteBounds="9.765, 5.2100000000000009, 1.9700000000000002, 4.118804931640625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="bd418739-04d6-4326-9a79-afd606ad5279" isExpanded="false" absoluteBounds="9.75, 6.75, 2, 0.44999999999999929">
-      <DataClassMoniker Name="/TDBDataContext/v_zzp_Take_AA_BomBillComponent" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b1cbad3c-d9a1-4cce-b7fc-e615612d8dbd" absoluteBounds="9.765, 7.2100000000000009, 1.9700000000000002, 2.825246175130208" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e76035a0-3cb8-45cd-b948-ae19e9fa68b3" isExpanded="false" absoluteBounds="9.75, 8.75, 2, 0.44999999999999929">
-      <DataClassMoniker Name="/TDBDataContext/v_zzp_Take_AA_BomComponentSubstitute" />
-      <nestedChildShapes>
-        <elementListCompartment Id="00f94f29-4283-4b55-852d-fc8f705ddc0b" absoluteBounds="9.765, 9.21, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="ba200b79-dabc-4e64-abe0-c4c12cb8100e" isExpanded="false" absoluteBounds="0.75, 10.75, 2, 0.44999999999999929">
       <DataClassMoniker Name="/TDBDataContext/v_zzp_Take_PP_workOrder_SNS" />
       <nestedChildShapes>
@@ -132,6 +120,18 @@
       <DataClassMoniker Name="/TDBDataContext/v_zzp_Take_PP_workOrderRequirement" />
       <nestedChildShapes>
         <elementListCompartment Id="0e1f854c-1103-4297-88fc-52c37e7e8663" absoluteBounds="3.7650000000000006, 11.21, 1.9700000000000002, 2.270863850911458" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="063c68a7-b840-432a-a1d0-6dda77fca3f5" isExpanded="false" absoluteBounds="9.75, 8.625, 2, 0.45">
+      <DataClassMoniker Name="/TDBDataContext/v_zzp_Take_AA_BomComponentSubstitute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c82b8e01-9930-4740-a6c6-1610433e4973" absoluteBounds="9.765, 9.085, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0d0639c-7c38-4de5-94b1-988d721b669d" isExpanded="false" absoluteBounds="10.5, 6.125, 2, 0.45">
+      <DataClassMoniker Name="/TDBDataContext/v_zzp_Take_AA_BomBillComponent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="315dd0fc-0909-4c52-8302-ce1153c388b3" absoluteBounds="10.515, 6.585, 1.9700000000000002, 3.010040283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

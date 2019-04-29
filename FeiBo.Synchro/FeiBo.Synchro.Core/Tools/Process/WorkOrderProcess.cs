@@ -4,7 +4,7 @@ using System.Linq;
 namespace FeiBo.Synchro.Core.Tools.Process
 {
     /// <summary>
-    /// 客户
+    /// 生产订单
     /// </summary>
     public class WorkOrderProcess : Common, IProcess, IMethod
     {
@@ -110,7 +110,8 @@ namespace FeiBo.Synchro.Core.Tools.Process
                                     synTime = DateTime.Now.ToLong(),//同步时间
                                     synPerson = "U8"//同步人：即操作 人
                                 };
-
+                                //var json = Newtonsoft.Json.JsonConvert.SerializeObject(new object[] { _tmp });
+                                //System.Diagnostics.Debug.WriteLine(json);
                                 base.AddPost(dbContext, base.GetUrl(1, MyParams.UrlType.workOrder), _tmp, nameof(dbContext.PP_workOrder), nameof(_dto.MoId), _dto.MoId.ToString());
                             }
                             catch (Exception exx)

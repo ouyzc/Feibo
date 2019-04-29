@@ -72,7 +72,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
                                 var _tmp = new
                                 {
                                     vendorCode = _dto.vendorCode,//供应商代码
-                                    vendorName = _dto.verdorName,//供应商名称
+                                    verdorName = _dto.verdorName,//供应商名称
                                     address = _dto.address,//地址
                                     contactor = _dto.contactor,//联系人
                                     phone = _dto.phone,//联系电话
@@ -120,7 +120,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
                                 var _tmp = new
                                 {
                                     vendorCode = _dto.vendorCode,//供应商代码
-                                    vendorName = _dto.verdorName,//供应商名称
+                                    verdorName = _dto.verdorName,//供应商名称
                                     address = _dto.address,//地址
                                     contactor = _dto.contactor,//联系人
                                     phone = _dto.phone,//联系电话

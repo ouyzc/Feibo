@@ -233,22 +233,6 @@ namespace FeiBo.Synchro.Core
 			}
 		}
 		
-		public System.Data.Linq.Table<v_zzp_Take_AA_BomBillComponent> v_zzp_Take_AA_BomBillComponent
-		{
-			get
-			{
-				return this.GetTable<v_zzp_Take_AA_BomBillComponent>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_zzp_Take_AA_BomComponentSubstitute> v_zzp_Take_AA_BomComponentSubstitute
-		{
-			get
-			{
-				return this.GetTable<v_zzp_Take_AA_BomComponentSubstitute>();
-			}
-		}
-		
 		public System.Data.Linq.Table<v_zzp_Take_PP_workOrder_SNS> v_zzp_Take_PP_workOrder_SNS
 		{
 			get
@@ -262,6 +246,22 @@ namespace FeiBo.Synchro.Core
 			get
 			{
 				return this.GetTable<v_zzp_Take_PP_workOrderRequirement>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_zzp_Take_AA_BomComponentSubstitute> v_zzp_Take_AA_BomComponentSubstitute
+		{
+			get
+			{
+				return this.GetTable<v_zzp_Take_AA_BomComponentSubstitute>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_zzp_Take_AA_BomBillComponent> v_zzp_Take_AA_BomBillComponent
+		{
+			get
+			{
+				return this.GetTable<v_zzp_Take_AA_BomBillComponent>();
 			}
 		}
 		
@@ -7294,384 +7294,6 @@ namespace FeiBo.Synchro.Core
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_zzp_Take_AA_BomBillComponent")]
-	public partial class v_zzp_Take_AA_BomBillComponent
-	{
-		
-		private int _BomId;
-		
-		private string _opCode;
-		
-		private string _location;
-		
-		private string _componentItem;
-		
-		private System.Nullable<decimal> _componentQuantity;
-		
-		private string _lowQuantity;
-		
-		private string _highQuantity;
-		
-		private string _keyPartsFlag;
-		
-		private string _trackerFlag;
-		
-		private string _inputFlag;
-		
-		private string _validateTime;
-		
-		private string _en;
-		
-		private string _zh;
-		
-		private System.Nullable<long> _ts;
-		
-		public v_zzp_Take_AA_BomBillComponent()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BomId", DbType="Int NOT NULL")]
-		public int BomId
-		{
-			get
-			{
-				return this._BomId;
-			}
-			set
-			{
-				if ((this._BomId != value))
-				{
-					this._BomId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_opCode", DbType="NChar(4)")]
-		public string opCode
-		{
-			get
-			{
-				return this._opCode;
-			}
-			set
-			{
-				if ((this._opCode != value))
-				{
-					this._opCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_location", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string location
-		{
-			get
-			{
-				return this._location;
-			}
-			set
-			{
-				if ((this._location != value))
-				{
-					this._location = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_componentItem", DbType="NVarChar(60) NOT NULL", CanBeNull=false)]
-		public string componentItem
-		{
-			get
-			{
-				return this._componentItem;
-			}
-			set
-			{
-				if ((this._componentItem != value))
-				{
-					this._componentItem = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_componentQuantity", DbType="Decimal(28,6)")]
-		public System.Nullable<decimal> componentQuantity
-		{
-			get
-			{
-				return this._componentQuantity;
-			}
-			set
-			{
-				if ((this._componentQuantity != value))
-				{
-					this._componentQuantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lowQuantity", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string lowQuantity
-		{
-			get
-			{
-				return this._lowQuantity;
-			}
-			set
-			{
-				if ((this._lowQuantity != value))
-				{
-					this._lowQuantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_highQuantity", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string highQuantity
-		{
-			get
-			{
-				return this._highQuantity;
-			}
-			set
-			{
-				if ((this._highQuantity != value))
-				{
-					this._highQuantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_keyPartsFlag", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string keyPartsFlag
-		{
-			get
-			{
-				return this._keyPartsFlag;
-			}
-			set
-			{
-				if ((this._keyPartsFlag != value))
-				{
-					this._keyPartsFlag = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trackerFlag", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string trackerFlag
-		{
-			get
-			{
-				return this._trackerFlag;
-			}
-			set
-			{
-				if ((this._trackerFlag != value))
-				{
-					this._trackerFlag = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inputFlag", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string inputFlag
-		{
-			get
-			{
-				return this._inputFlag;
-			}
-			set
-			{
-				if ((this._inputFlag != value))
-				{
-					this._inputFlag = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_validateTime", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string validateTime
-		{
-			get
-			{
-				return this._validateTime;
-			}
-			set
-			{
-				if ((this._validateTime != value))
-				{
-					this._validateTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_en", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string en
-		{
-			get
-			{
-				return this._en;
-			}
-			set
-			{
-				if ((this._en != value))
-				{
-					this._en = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zh", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string zh
-		{
-			get
-			{
-				return this._zh;
-			}
-			set
-			{
-				if ((this._zh != value))
-				{
-					this._zh = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ts", DbType="BigInt")]
-		public System.Nullable<long> ts
-		{
-			get
-			{
-				return this._ts;
-			}
-			set
-			{
-				if ((this._ts != value))
-				{
-					this._ts = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_zzp_Take_AA_BomComponentSubstitute")]
-	public partial class v_zzp_Take_AA_BomComponentSubstitute
-	{
-		
-		private int _BomId;
-		
-		private string _substituteItem;
-		
-		private System.Nullable<decimal> _substituteQuantity;
-		
-		private string _en;
-		
-		private string _zh;
-		
-		private System.Nullable<long> _ts;
-		
-		public v_zzp_Take_AA_BomComponentSubstitute()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BomId", DbType="Int NOT NULL")]
-		public int BomId
-		{
-			get
-			{
-				return this._BomId;
-			}
-			set
-			{
-				if ((this._BomId != value))
-				{
-					this._BomId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_substituteItem", DbType="NVarChar(60) NOT NULL", CanBeNull=false)]
-		public string substituteItem
-		{
-			get
-			{
-				return this._substituteItem;
-			}
-			set
-			{
-				if ((this._substituteItem != value))
-				{
-					this._substituteItem = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_substituteQuantity", DbType="Decimal(28,6)")]
-		public System.Nullable<decimal> substituteQuantity
-		{
-			get
-			{
-				return this._substituteQuantity;
-			}
-			set
-			{
-				if ((this._substituteQuantity != value))
-				{
-					this._substituteQuantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_en", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string en
-		{
-			get
-			{
-				return this._en;
-			}
-			set
-			{
-				if ((this._en != value))
-				{
-					this._en = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zh", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string zh
-		{
-			get
-			{
-				return this._zh;
-			}
-			set
-			{
-				if ((this._zh != value))
-				{
-					this._zh = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ts", DbType="BigInt")]
-		public System.Nullable<long> ts
-		{
-			get
-			{
-				return this._ts;
-			}
-			set
-			{
-				if ((this._ts != value))
-				{
-					this._ts = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_zzp_Take_PP_workOrder_SNS")]
 	public partial class v_zzp_Take_PP_workOrder_SNS
 	{
@@ -7957,6 +7579,402 @@ namespace FeiBo.Synchro.Core
 				if ((this._usage != value))
 				{
 					this._usage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ts", DbType="BigInt")]
+		public System.Nullable<long> ts
+		{
+			get
+			{
+				return this._ts;
+			}
+			set
+			{
+				if ((this._ts != value))
+				{
+					this._ts = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_zzp_Take_AA_BomComponentSubstitute")]
+	public partial class v_zzp_Take_AA_BomComponentSubstitute
+	{
+		
+		private int _ComponentId;
+		
+		private string _substituteItem;
+		
+		private System.Nullable<decimal> _substituteQuantity;
+		
+		private string _en;
+		
+		private string _zh;
+		
+		private System.Nullable<long> _ts;
+		
+		public v_zzp_Take_AA_BomComponentSubstitute()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComponentId", DbType="Int NOT NULL")]
+		public int ComponentId
+		{
+			get
+			{
+				return this._ComponentId;
+			}
+			set
+			{
+				if ((this._ComponentId != value))
+				{
+					this._ComponentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_substituteItem", DbType="NVarChar(60) NOT NULL", CanBeNull=false)]
+		public string substituteItem
+		{
+			get
+			{
+				return this._substituteItem;
+			}
+			set
+			{
+				if ((this._substituteItem != value))
+				{
+					this._substituteItem = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_substituteQuantity", DbType="Decimal(28,6)")]
+		public System.Nullable<decimal> substituteQuantity
+		{
+			get
+			{
+				return this._substituteQuantity;
+			}
+			set
+			{
+				if ((this._substituteQuantity != value))
+				{
+					this._substituteQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_en", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string en
+		{
+			get
+			{
+				return this._en;
+			}
+			set
+			{
+				if ((this._en != value))
+				{
+					this._en = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zh", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string zh
+		{
+			get
+			{
+				return this._zh;
+			}
+			set
+			{
+				if ((this._zh != value))
+				{
+					this._zh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ts", DbType="BigInt")]
+		public System.Nullable<long> ts
+		{
+			get
+			{
+				return this._ts;
+			}
+			set
+			{
+				if ((this._ts != value))
+				{
+					this._ts = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_zzp_Take_AA_BomBillComponent")]
+	public partial class v_zzp_Take_AA_BomBillComponent
+	{
+		
+		private int _BomId;
+		
+		private int _ComponentId;
+		
+		private string _opCode;
+		
+		private string _location;
+		
+		private string _componentItem;
+		
+		private decimal _componentQuantity;
+		
+		private string _lowQuantity;
+		
+		private string _highQuantity;
+		
+		private string _keyPartsFlag;
+		
+		private string _trackerFlag;
+		
+		private string _inputFlag;
+		
+		private string _validateTime;
+		
+		private string _en;
+		
+		private string _zh;
+		
+		private System.Nullable<long> _ts;
+		
+		public v_zzp_Take_AA_BomBillComponent()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BomId", DbType="Int NOT NULL")]
+		public int BomId
+		{
+			get
+			{
+				return this._BomId;
+			}
+			set
+			{
+				if ((this._BomId != value))
+				{
+					this._BomId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComponentId", DbType="Int NOT NULL")]
+		public int ComponentId
+		{
+			get
+			{
+				return this._ComponentId;
+			}
+			set
+			{
+				if ((this._ComponentId != value))
+				{
+					this._ComponentId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_opCode", DbType="NChar(4)")]
+		public string opCode
+		{
+			get
+			{
+				return this._opCode;
+			}
+			set
+			{
+				if ((this._opCode != value))
+				{
+					this._opCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_location", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string location
+		{
+			get
+			{
+				return this._location;
+			}
+			set
+			{
+				if ((this._location != value))
+				{
+					this._location = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_componentItem", DbType="NVarChar(60) NOT NULL", CanBeNull=false)]
+		public string componentItem
+		{
+			get
+			{
+				return this._componentItem;
+			}
+			set
+			{
+				if ((this._componentItem != value))
+				{
+					this._componentItem = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_componentQuantity", DbType="Decimal(3,2) NOT NULL")]
+		public decimal componentQuantity
+		{
+			get
+			{
+				return this._componentQuantity;
+			}
+			set
+			{
+				if ((this._componentQuantity != value))
+				{
+					this._componentQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lowQuantity", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string lowQuantity
+		{
+			get
+			{
+				return this._lowQuantity;
+			}
+			set
+			{
+				if ((this._lowQuantity != value))
+				{
+					this._lowQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_highQuantity", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string highQuantity
+		{
+			get
+			{
+				return this._highQuantity;
+			}
+			set
+			{
+				if ((this._highQuantity != value))
+				{
+					this._highQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_keyPartsFlag", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string keyPartsFlag
+		{
+			get
+			{
+				return this._keyPartsFlag;
+			}
+			set
+			{
+				if ((this._keyPartsFlag != value))
+				{
+					this._keyPartsFlag = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trackerFlag", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string trackerFlag
+		{
+			get
+			{
+				return this._trackerFlag;
+			}
+			set
+			{
+				if ((this._trackerFlag != value))
+				{
+					this._trackerFlag = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inputFlag", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string inputFlag
+		{
+			get
+			{
+				return this._inputFlag;
+			}
+			set
+			{
+				if ((this._inputFlag != value))
+				{
+					this._inputFlag = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_validateTime", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string validateTime
+		{
+			get
+			{
+				return this._validateTime;
+			}
+			set
+			{
+				if ((this._validateTime != value))
+				{
+					this._validateTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_en", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string en
+		{
+			get
+			{
+				return this._en;
+			}
+			set
+			{
+				if ((this._en != value))
+				{
+					this._en = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zh", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string zh
+		{
+			get
+			{
+				return this._zh;
+			}
+			set
+			{
+				if ((this._zh != value))
+				{
+					this._zh = value;
 				}
 			}
 		}

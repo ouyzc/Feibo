@@ -93,7 +93,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
                                         s.en,//英 文 描述
                                         s.zh,//中 文 描述
                                         bomComponentSubstitute = dbContext.v_zzp_Take_AA_BomComponentSubstitute//替代料明细
-                                        .Where(ww => ww.BomId == _dto.BomId)
+                                        .Where(ww => ww.ComponentId == s.ComponentId)
                                         .Select(ss => new {
                                             ss.substituteItem,//物料编码
                                             ss.substituteQuantity,//使用数量
@@ -167,7 +167,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
                                         s.en,//英 文 描述
                                         s.zh,//中 文 描述
                                         bomComponentSubstitute = dbContext.v_zzp_Take_AA_BomComponentSubstitute//替代料明细
-                                        .Where(ww => ww.BomId == _dto.BomId)
+                                        .Where(ww => ww.ComponentId == s.ComponentId)
                                         .Select(ss => new {
                                             ss.substituteItem,//物料编码
                                             ss.substituteQuantity,//使用数量

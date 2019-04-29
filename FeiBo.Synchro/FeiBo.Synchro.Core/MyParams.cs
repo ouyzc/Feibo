@@ -22,7 +22,7 @@ namespace FeiBo.Synchro.Core
             /// <summary>
             /// MES接口地址
             /// </summary>
-            public static string baseUrl = "http://localhost:52724/api/ST/Rdrecord10/";
+            public static string baseUrl = "http://192.168.11.201:8080/rest";
             /// <summary>
             /// 帐套号
             /// </summary>
