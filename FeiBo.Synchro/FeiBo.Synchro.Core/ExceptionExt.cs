@@ -7,21 +7,21 @@ namespace FeiBo.Synchro.Core
     /// </summary>
     public class ExceptionExt
     {
-            /// <summary>
-            /// 处理异常
-            /// </summary>
-            /// <param name="ex">异常对象</param>
-            /// <returns></returns>
-            public static string HandleEX(System.Exception ex)
+        /// <summary>
+        /// 处理异常
+        /// </summary>
+        /// <param name="ex">异常对象</param>
+        /// <returns></returns>
+        public static string HandleEX(System.Exception ex)
+        {
+            if (ex?.InnerException == null)
             {
-                if (ex ? .InnerException == null)
-                {
-                    return ex ? .Message;
-                }
-                else
-                {
-                    return HandleEX(ex ? .InnerException);
-                }
+                return ex?.Message;
             }
+            else
+            {
+                return HandleEX(ex?.InnerException);
+            }
+        }
     }
 }

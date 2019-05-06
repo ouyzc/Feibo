@@ -467,6 +467,43 @@ namespace FeiBo.Synchro.Core
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_zzp_ST_get_ID")]
+		public int p_zzp_ST_get_ID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cnt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> hid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> bid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cnt, hid, bid);
+			hid = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			bid = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_zzp_ST_create_RD10")]
+		public int p_zzp_ST_create_RD10([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MoCode", DbType="VarChar(50)")] string moCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string warehousecode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cDepCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(255)")] string memory, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cMaker, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p5)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), moCode, warehousecode, dDate, cDepCode, memory, cMaker, p5);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_zzp_ST_create_RD10_b")]
+		public int p_zzp_ST_create_RD10_b([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MoCode", DbType="VarChar(50)")] string moCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string inventorycode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> quantity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string itemcode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string define22, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string define24, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(255)")] string memory, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> irowno, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p5, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p6)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), moCode, inventorycode, quantity, itemcode, define22, define24, memory, irowno, p5, p6);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_zzp_ST_create_RD11")]
+		public int p_zzp_ST_create_RD11([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MoCode", DbType="VarChar(50)")] string moCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string dDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cDepCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(255)")] string memory, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cMaker, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p5)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), moCode, dDate, cDepCode, memory, cMaker, p5);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_zzp_ST_create_RD11_b")]
+		public int p_zzp_ST_create_RD11_b([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MoCode", DbType="VarChar(50)")] string moCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string inventorycode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> quantity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string itemcode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string define22, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string define24, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(255)")] string memory, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> irowno, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p5, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p6)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), moCode, inventorycode, quantity, itemcode, define22, define24, memory, irowno, p5, p6);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_zzp_Get_AA_ComputationUnit")]

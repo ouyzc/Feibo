@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Interop.MSXML2, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -108,6 +110,10 @@
     <Content Include="db\20190429\飞博MES对接.sql" />
     <Content Include="db\20190429\飞博MES对接_Dev.sql" />
     <Content Include="db\20190429\飞博MES对接_Tmp.sql" />
+    <Content Include="db\20190507\MES_U80507.sql" />
+    <Content Include="db\20190507\写库_产成品入库.sql" />
+    <Content Include="db\20190507\写库_红字材料出库.sql" />
+    <Content Include="db\20190507\飞博MES对接_Dev.sql" />
     <Content Include="lib\Interop.MSXML2.dll" />
     <Content Include="lib\Newtonsoft.Json.dll" />
     <Content Include="lib\ZM.Core.dll" />

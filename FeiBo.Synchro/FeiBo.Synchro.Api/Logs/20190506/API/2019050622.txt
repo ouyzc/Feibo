@@ -1,0 +1,13 @@
+2019/5/6 22:30:37:【ExFill】:[存货]不存在!
+	   在 FeiBo.Synchro.Core.Api.Process.Rdrecord10.Create(RdrecordDTO dto) 位置 D:\Git\Feibo\FeiBo.Synchro\FeiBo.Synchro.Core\Api\Process\Rdrecord10.cs:行号 99
+   在 FeiBo.Synchro.Core.Api.Process.Rdrecord10.Invork(RdrecordDTO dto) 位置 D:\Git\Feibo\FeiBo.Synchro\FeiBo.Synchro.Core\Api\Process\Rdrecord10.cs:行号 12
+   在 FeiBo.Synchro.Api.Areas.ST.Controllers.Rdrecord10Controller.<>c__DisplayClass0_0.<Create>b__0() 位置 D:\Git\Feibo\FeiBo.Synchro\FeiBo.Synchro.Api\Areas\ST\Controllers\Rdrecord10Controller.cs:行号 28
+2019/5/6 22:30:37:【Ex】:[存货]不存在!
+2019/5/6 22:31:30:【ExFill】:[存货]不存在!
+	   在 FeiBo.Synchro.Core.Api.Process.Rdrecord10.Create(RdrecordDTO dto) 位置 D:\Git\Feibo\FeiBo.Synchro\FeiBo.Synchro.Core\Api\Process\Rdrecord10.cs:行号 99
+   在 FeiBo.Synchro.Core.Api.Process.Rdrecord10.Invork(RdrecordDTO dto) 位置 D:\Git\Feibo\FeiBo.Synchro\FeiBo.Synchro.Core\Api\Process\Rdrecord10.cs:行号 12
+   在 FeiBo.Synchro.Api.Areas.ST.Controllers.Rdrecord10Controller.<>c__DisplayClass0_0.<Create>b__0() 位置 D:\Git\Feibo\FeiBo.Synchro\FeiBo.Synchro.Api\Areas\ST\Controllers\Rdrecord10Controller.cs:行号 28
+2019/5/6 22:31:30:【Ex】:[存货]不存在!
+2019/5/6 22:33:30:【Ex】:生成成功!
+2019/5/6 22:41:45:【Ex】:生成成功!
+2019/5/6 22:56:37:【Ex】:生成成功!

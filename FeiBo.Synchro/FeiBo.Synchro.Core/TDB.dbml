@@ -515,4 +515,55 @@
   <Function Name="dbo.p_zzp_modify_PP_workOrder" Method="p_zzp_modify_PP_workOrder">
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.p_zzp_ST_get_ID" Method="p_zzp_ST_get_ID">
+    <Parameter Name="cnt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="bid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_ST_create_RD10" Method="p_zzp_ST_create_RD10">
+    <Parameter Name="MoCode" Parameter="moCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="warehousecode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cDepCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="memory" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="cMaker" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p5" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_ST_create_RD10_b" Method="p_zzp_ST_create_RD10_b">
+    <Parameter Name="MoCode" Parameter="moCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="inventorycode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="quantity" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="itemcode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="define22" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="define24" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="memory" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="irowno" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p5" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p6" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_ST_create_RD11" Method="p_zzp_ST_create_RD11">
+    <Parameter Name="MoCode" Parameter="moCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cDepCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="memory" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="cMaker" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p5" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_ST_create_RD11_b" Method="p_zzp_ST_create_RD11_b">
+    <Parameter Name="MoCode" Parameter="moCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="inventorycode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="quantity" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="itemcode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="define22" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="define24" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="memory" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="irowno" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p5" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p6" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

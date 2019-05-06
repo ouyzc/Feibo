@@ -1,24 +1,25 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using FeiBo.Synchro.Core.Tools.Process;
+using System;
 using System.Collections.Generic;
-using FeiBo.Synchro.Core.Tools.Process;
+using System.Threading.Tasks;
 
 namespace FeiBo.Synchro.Tools
 {
-    class Program
+    internal class Program
     {
-            static void Main(string[] args)
+        private static void Main(string[] args)
+        { 
+            //CancellationTokenSource ts = new CancellationTokenSource();
+            //ts.Cancel();
+            ///判断线程,避免重复运行
+            if (System.Diagnostics.Process.GetProcessesByName(System.Diagnostics.Process.GetCurrentProcess().ProcessName).Length > 1)
             {
-                //CancellationTokenSource ts = new CancellationTokenSource();
-                //ts.Cancel();
-                ///判断线程,避免重复运行
-                if (System.Diagnostics.Process.GetProcessesByName(System.Diagnostics.Process.GetCurrentProcess().ProcessName).Length > 1)
-                {
-                    Environment.Exit(0);
-                }
-                else {
-                    ///声明线程集合
-                    Task.WaitAll(new List<Task>
+                Environment.Exit(0);
+            }
+            else
+            {
+                ///声明线程集合
+                Task.WaitAll(new List<Task>
                     {
                         //Task.Run(() =>
                         //{
@@ -65,8 +66,8 @@ namespace FeiBo.Synchro.Tools
                         //    IProcess process = new DeliveryProcess();//发货
                         //    process.Invork();
                         //}),
-                    } .ToArray());
-                }
+                    }.ToArray());
             }
+        }
     }
 }

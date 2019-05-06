@@ -4,7 +4,7 @@ namespace FeiBo.Synchro.Core.Tools.Process
     /// <summary>
     /// 对内规范接口
     /// </summary>
-    interface IMethod
+    internal interface IMethod
     {
         /// <summary>
         /// 加载
