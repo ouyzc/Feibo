@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ZM_Dev" Class="TDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.10.5;Initial Catalog=ZM_Dev;User ID=pwd;Enlist=True;Pooling=True;Min Pool Size=0;Max Pool Size=300;Load Balance Timeout=300;Packet Size=1000" SettingsObjectName="FeiBo.Synchro.Core.Properties.Settings" SettingsPropertyName="zzpConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.37.129;Initial Catalog=ZM_Dev;User ID=sa;Enlist=True;Pooling=True;Min Pool Size=0;Max Pool Size=300;Load Balance Timeout=300;Packet Size=1000" SettingsObjectName="FeiBo.Synchro.Core.Properties.Settings" SettingsPropertyName="zzpConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.v_zzp_Get_AA_ComputationUnit" Member="v_zzp_Get_AA_ComputationUnit">
     <Type Name="v_zzp_Get_AA_ComputationUnit">
       <Column Name="unitName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -417,6 +417,19 @@
       <Column Name="ts" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Log_Api" Member="Log_Api">
+    <Type Name="Log_Api">
+      <Column Name="pk_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cIdentity" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="cType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cMethod" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="errcode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="errmsg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cParams" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dCreateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.p_zzp_log_tools" Method="p_zzp_log_tools">
     <Parameter Name="cType" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="cMethod" Type="System.String" DbType="VarChar(MAX)" />
@@ -564,6 +577,27 @@
     <Parameter Name="irowno" Type="System.Int32" DbType="Int" />
     <Parameter Name="p5" Type="System.Int32" DbType="Int" />
     <Parameter Name="p6" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_ST_relation_RD10" Method="p_zzp_ST_relation_RD10">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="cProBatch" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cMPoCode" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_ST_relation_RD10_b" Method="p_zzp_ST_relation_RD10_b">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="cMPoCode" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_ST_relation_RD11" Method="p_zzp_ST_relation_RD11">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="cMPoCode" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.p_zzp_ST_relation_RD11_b" Method="p_zzp_ST_relation_RD11_b">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="cMPoCode" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -12,7 +12,7 @@ namespace FeiBo.Synchro.Core.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.1.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,7 +26,9 @@ namespace FeiBo.Synchro.Core.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.10.5;Initial Catalog=ZM_Dev;User ID=pwd;Password=admin@123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Enlist=true;Pooling=true;Max Pool Size=300;Min Pool Size=0;Connection Lifetime=30" +
+            "0;packet size=1000;Data Source=192.168.37.129;Initial Catalog=ZM_Dev;User ID=sa;" +
+            "Password=1")]
         public string zzpConnectionString {
             get {
                 return ((string)(this["zzpConnectionString"]));

@@ -20,9 +20,13 @@ namespace FeiBo.Synchro.Core.Api
         /// </summary>
         public string errmsg { get; set; }
         /// <summary>
+        /// 受影响ID
+        /// </summary>
+        public string dtoid { get; set; }
+        /// <summary>
         /// 受影响编码
         /// </summary>
-        public string dtocode { get; set; }
+        //public string dtocode { get; set; }
         /// <summary>
         /// 空构造
         /// </summary>
@@ -32,13 +36,24 @@ namespace FeiBo.Synchro.Core.Api
         /// 带参构造
         /// </summary> 
         /// <param name="errmsg">错误信息</param>
-        /// <param name="dtocode">受影响编码</param>
-        public ResultModel(string errmsg,string dtocode)
+        /// <param name="dtoid">受影响编码</param>
+        public ResultModel(string errmsg,string dtoid)
         {
             this.errcode = 0;
             this.errmsg = errmsg;
-            this.dtocode = dtocode;
+            this.dtoid = dtoid;
         }
+        ///// <summary>
+        ///// 带参构造
+        ///// </summary> 
+        ///// <param name="errmsg">错误信息</param>
+        ///// <param name="dtocode">受影响编码</param>
+        //public ResultModel(string errmsg, string dtocode)
+        //{
+        //    this.errcode = 0;
+        //    this.errmsg = errmsg;
+        //    this.dtocode = dtocode;
+        //}
         /// <summary>
         /// 带参构造
         /// </summary>

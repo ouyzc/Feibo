@@ -5,10 +5,10 @@
     <Setting Name="zzpConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.10.5;Initial Catalog=ZM_Dev;User ID=pwd;Password=admin@123&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Enlist=true;Pooling=true;Max Pool Size=300;Min Pool Size=0;Connection Lifetime=300;packet size=1000;Data Source=192.168.37.129;Initial Catalog=ZM_Dev;User ID=sa;Password=1&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.10.5;Initial Catalog=ZM_Dev;User ID=pwd;Password=admin@123</Value>
+      <Value Profile="(Default)">Enlist=true;Pooling=true;Max Pool Size=300;Min Pool Size=0;Connection Lifetime=300;packet size=1000;Data Source=192.168.37.129;Initial Catalog=ZM_Dev;User ID=sa;Password=1</Value>
     </Setting>
   </Settings>
 </SettingsFile>

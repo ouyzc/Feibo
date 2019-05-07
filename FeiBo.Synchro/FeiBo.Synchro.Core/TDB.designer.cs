@@ -57,6 +57,9 @@ namespace FeiBo.Synchro.Core
     partial void InsertPP_workOrder(PP_workOrder instance);
     partial void UpdatePP_workOrder(PP_workOrder instance);
     partial void DeletePP_workOrder(PP_workOrder instance);
+    partial void InsertLog_Api(Log_Api instance);
+    partial void UpdateLog_Api(Log_Api instance);
+    partial void DeleteLog_Api(Log_Api instance);
     #endregion
 		
 		public TDBDataContext() : 
@@ -262,6 +265,14 @@ namespace FeiBo.Synchro.Core
 			get
 			{
 				return this.GetTable<v_zzp_Take_AA_BomBillComponent>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Log_Api> Log_Api
+		{
+			get
+			{
+				return this.GetTable<Log_Api>();
 			}
 		}
 		
@@ -502,6 +513,34 @@ namespace FeiBo.Synchro.Core
 		public int p_zzp_ST_create_RD11_b([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MoCode", DbType="VarChar(50)")] string moCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string inventorycode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> quantity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string itemcode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string define22, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string define24, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(255)")] string memory, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> irowno, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p5, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p6)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), moCode, inventorycode, quantity, itemcode, define22, define24, memory, irowno, p5, p6);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_zzp_ST_relation_RD10")]
+		public int p_zzp_ST_relation_RD10([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="BigInt")] System.Nullable<long> iD, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cProBatch, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cMPoCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, cProBatch, cMPoCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_zzp_ST_relation_RD10_b")]
+		public int p_zzp_ST_relation_RD10_b([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="BigInt")] System.Nullable<long> iD, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cMPoCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, cMPoCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_zzp_ST_relation_RD11")]
+		public int p_zzp_ST_relation_RD11([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="BigInt")] System.Nullable<long> iD, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cMPoCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, cMPoCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.p_zzp_ST_relation_RD11_b")]
+		public int p_zzp_ST_relation_RD11_b([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="BigInt")] System.Nullable<long> iD, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cMPoCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, cMPoCode);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -8029,6 +8068,260 @@ namespace FeiBo.Synchro.Core
 				{
 					this._ts = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Log_Api")]
+	public partial class Log_Api : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _pk_id;
+		
+		private string _ip;
+		
+		private string _cIdentity;
+		
+		private string _cType;
+		
+		private string _cMethod;
+		
+		private System.Nullable<int> _errcode;
+		
+		private string _errmsg;
+		
+		private string _cParams;
+		
+		private System.DateTime _dCreateTime;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onpk_idChanging(int value);
+    partial void Onpk_idChanged();
+    partial void OnipChanging(string value);
+    partial void OnipChanged();
+    partial void OncIdentityChanging(string value);
+    partial void OncIdentityChanged();
+    partial void OncTypeChanging(string value);
+    partial void OncTypeChanged();
+    partial void OncMethodChanging(string value);
+    partial void OncMethodChanged();
+    partial void OnerrcodeChanging(System.Nullable<int> value);
+    partial void OnerrcodeChanged();
+    partial void OnerrmsgChanging(string value);
+    partial void OnerrmsgChanged();
+    partial void OncParamsChanging(string value);
+    partial void OncParamsChanged();
+    partial void OndCreateTimeChanging(System.DateTime value);
+    partial void OndCreateTimeChanged();
+    #endregion
+		
+		public Log_Api()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pk_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int pk_id
+		{
+			get
+			{
+				return this._pk_id;
+			}
+			set
+			{
+				if ((this._pk_id != value))
+				{
+					this.Onpk_idChanging(value);
+					this.SendPropertyChanging();
+					this._pk_id = value;
+					this.SendPropertyChanged("pk_id");
+					this.Onpk_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ip", DbType="VarChar(50)")]
+		public string ip
+		{
+			get
+			{
+				return this._ip;
+			}
+			set
+			{
+				if ((this._ip != value))
+				{
+					this.OnipChanging(value);
+					this.SendPropertyChanging();
+					this._ip = value;
+					this.SendPropertyChanged("ip");
+					this.OnipChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cIdentity", DbType="VarChar(255)")]
+		public string cIdentity
+		{
+			get
+			{
+				return this._cIdentity;
+			}
+			set
+			{
+				if ((this._cIdentity != value))
+				{
+					this.OncIdentityChanging(value);
+					this.SendPropertyChanging();
+					this._cIdentity = value;
+					this.SendPropertyChanged("cIdentity");
+					this.OncIdentityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cType", DbType="VarChar(50)")]
+		public string cType
+		{
+			get
+			{
+				return this._cType;
+			}
+			set
+			{
+				if ((this._cType != value))
+				{
+					this.OncTypeChanging(value);
+					this.SendPropertyChanging();
+					this._cType = value;
+					this.SendPropertyChanged("cType");
+					this.OncTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cMethod", DbType="VarChar(MAX)")]
+		public string cMethod
+		{
+			get
+			{
+				return this._cMethod;
+			}
+			set
+			{
+				if ((this._cMethod != value))
+				{
+					this.OncMethodChanging(value);
+					this.SendPropertyChanging();
+					this._cMethod = value;
+					this.SendPropertyChanged("cMethod");
+					this.OncMethodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_errcode", DbType="Int")]
+		public System.Nullable<int> errcode
+		{
+			get
+			{
+				return this._errcode;
+			}
+			set
+			{
+				if ((this._errcode != value))
+				{
+					this.OnerrcodeChanging(value);
+					this.SendPropertyChanging();
+					this._errcode = value;
+					this.SendPropertyChanged("errcode");
+					this.OnerrcodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_errmsg", DbType="NVarChar(MAX)")]
+		public string errmsg
+		{
+			get
+			{
+				return this._errmsg;
+			}
+			set
+			{
+				if ((this._errmsg != value))
+				{
+					this.OnerrmsgChanging(value);
+					this.SendPropertyChanging();
+					this._errmsg = value;
+					this.SendPropertyChanged("errmsg");
+					this.OnerrmsgChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cParams", DbType="NVarChar(MAX)")]
+		public string cParams
+		{
+			get
+			{
+				return this._cParams;
+			}
+			set
+			{
+				if ((this._cParams != value))
+				{
+					this.OncParamsChanging(value);
+					this.SendPropertyChanging();
+					this._cParams = value;
+					this.SendPropertyChanged("cParams");
+					this.OncParamsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dCreateTime", DbType="DateTime NOT NULL")]
+		public System.DateTime dCreateTime
+		{
+			get
+			{
+				return this._dCreateTime;
+			}
+			set
+			{
+				if ((this._dCreateTime != value))
+				{
+					this.OndCreateTimeChanging(value);
+					this.SendPropertyChanging();
+					this._dCreateTime = value;
+					this.SendPropertyChanged("dCreateTime");
+					this.OndCreateTimeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

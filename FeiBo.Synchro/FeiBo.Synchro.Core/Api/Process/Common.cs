@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+
 namespace FeiBo.Synchro.Core.Api.Process
 {
     /// <summary>
@@ -10,13 +12,13 @@ namespace FeiBo.Synchro.Core.Api.Process
         /// <summary>
         /// 回调
         /// </summary>
+        /// <param name="dtoid">受影响编码</param>
         /// <param name="errmsg">错误信息</param>
-        /// <param name="dtocode">受影响编码</param>
         /// <returns>ResultModel对象</returns>
-        public ResultModel ReJson(string errmsg, string dtocode)
+        public ResultModel ReJson(string dtoid, string errmsg)
         {
             MyParams.log.Write(errmsg, "Ex");
-            return new ResultModel(errmsg, dtocode);
+            return new ResultModel(errmsg, dtoid);
         }
         /// <summary>
         /// 回调
@@ -45,10 +47,8 @@ namespace FeiBo.Synchro.Core.Api.Process
         /// <param name="errmsg">错误信息</param>
         /// <param name="errcode">是否成功</param>
         /// <returns>ResultModel对象</returns>
-        public ResultModel ReJson(string errmsg, bool flag)
-        {
-            return ReJson(errmsg, flag ? 0 : -1);
-        }
+        public ResultModel ReJson(string errmsg, bool flag) => ReJson(errmsg, flag ? 0 : -1);
+
         #endregion
         #region Common
 
@@ -66,9 +66,11 @@ namespace FeiBo.Synchro.Core.Api.Process
             dynamic xml = eai.GetThree(head, entrys);
             MyParams.log.Write(xml, "To");
             //请求数据
-            dynamic result = eai.SendProcess(xml);
+            ZM.EAPI.Models.EAPIResponseModel result = eai.SendProcess(xml);
             //记录日志
             MyParams.log.Write(result.responseText, "Back");
+            if (result.bflag)
+                return ReJson(result.u8key,$"{result.errmsg}{result.u8key}");
             return ReJson(result.errmsg, result.bflag);
         }
 
@@ -80,48 +82,56 @@ namespace FeiBo.Synchro.Core.Api.Process
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(dto.businesstype))
-                {
-                    throw new Exception("[业务类型]为空!");
-                }
+                //if (string.IsNullOrWhiteSpace(dto.businesstype))
+
+                //    throw new Exception("[业务类型]为空!");
+
 
                 if (string.IsNullOrWhiteSpace(dto.subproducingcode))
-                {
+
                     throw new Exception("[工单号]为空!");
-                }
+
                 if (string.IsNullOrWhiteSpace(dto.maker))
-                {
+
                     dto.maker = "MES";
-                }
+
                 if (string.IsNullOrWhiteSpace(dto.departmentcode))
-                {
+
                     throw new Exception("[部门]为空!");
-                }
+
                 if (dto.dtos == null || dto.dtos?.Count == 0)
-                {
+
                     throw new Exception("[表体数量]为空!");
-                }
+
+                //其他验证
+                if (!Factory.fdbContext.v_zzp_Get_AA_Department.Any(a => a.departmentCode == dto.departmentcode))
+
+                    throw new Exception("[部门]不存在!");
+
                 foreach (RdrecordDTOs item in dto.dtos)
                 {
                     if (string.IsNullOrWhiteSpace(item.inventorycode))
-                    {
+
                         throw new Exception("[存货]为空!");
-                    }
+
+                    if (!Factory.fdbContext.AA_Inventory.Any(a => a.itemNo == item.inventorycode))
+
+                        throw new Exception("[存货]不存在!");
 
                     if (item.quantity == 0)
-                    {
+
                         throw new Exception("[数量]为0!");
-                    }
+
 
                     if (item.quantity < 0)
-                    {
+
                         throw new Exception("数量必须大于0!");
-                    }
+
 
                     if (string.IsNullOrWhiteSpace(item.define22))
-                    {
+
                         throw new Exception("[生产序列号]为空!");
-                    }
+
                 }
             }
             catch (Exception ex)

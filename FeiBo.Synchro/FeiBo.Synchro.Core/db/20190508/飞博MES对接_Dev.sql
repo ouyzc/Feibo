@@ -71,7 +71,7 @@ SELECT  cu.cComunitCode unitName , --单位名称 Y
         cu.cEnSingular en , --英文描述 
         cu.cComUnitName zh , --中文描述
         CAST(cu.pubufts AS BIGINT) ts
-FROM    UFDATA_100_2019..ComputationUnit cu ;
+FROM    UFDATA_999_2019..ComputationUnit cu ;
 GO
 
 GO
@@ -159,7 +159,7 @@ SELECT  cus.cCusCode customerCode , --客户编码 Y
         cus.cCusEnName en , --英文描述 
         cus.cCusName zh , --中文描述 
         CAST(cus.pubufts AS BIGINT) ts
-FROM    UFDATA_100_2019..Customer cus ;
+FROM    UFDATA_999_2019..Customer cus ;
 GO
 
 GO
@@ -267,7 +267,7 @@ SELECT  ven.cVenCode vendorCode , --供应商代码 Y
         ven.cVenEnName en , --英文描述
         ven.cVenName zh , --中文描述  
         CAST(ven.pubufts AS BIGINT) ts
-FROM    UFDATA_100_2019..Vendor ven ;
+FROM    UFDATA_999_2019..Vendor ven ;
 GO
 
 GO
@@ -372,9 +372,9 @@ SELECT  dept.cDepCode departmentCode , --部门编码
         dept.cDepNameEn en , --英文描述 
         dept.cDepName zh , --中文描述  
         CAST(pubufts AS BIGINT) ts
-FROM    UFDATA_100_2019..Department dept ;
+FROM    UFDATA_999_2019..Department dept ;
 GO
- 
+
 GO
 --增量
 ALTER PROCEDURE [dbo].[p_zzp_load_AA_Department]
@@ -459,8 +459,8 @@ GO
 ALTER VIEW [dbo].[v_zzp_Take_AA_InventoryClass]
 AS
 --存货分类
-SELECT  CASE WHEN LEFT(cInvCCode, 2) IN  (01,04) THEN 'SemiFinished'--半 / 成品
-             ELSE 'Raw-Material'--原材料
+SELECT  CASE WHEN LEFT(cInvCCode, 2) IN ( 01, 04 ) THEN 'Raw-Material'
+             ELSE 'Semi-Finished'
         END categoryName ,
         --'RawMaterial' categoryName , --原材料：RawMaterial 半 / 成品： SemiFinished 类别名称 
         cInvCCode typeName , --类型名称  
@@ -468,7 +468,7 @@ SELECT  CASE WHEN LEFT(cInvCCode, 2) IN  (01,04) THEN 'SemiFinished'--半 / 成品
         '' en , --英文描述 
         cInvCName zh , --中文描述  
         CAST(pubufts AS BIGINT) ts
-FROM    UFDATA_100_2019..InventoryClass invclass ;
+FROM    UFDATA_999_2019..InventoryClass invclass ;
 GO
 
 GO
@@ -559,8 +559,8 @@ AS
 SELECT  inv.cInvCode itemNo , --物料编码
         inv.cInvName itemName , --物料名称 
         --'RawMaterial' categoryName , --原材料：RawMaterial 半 / 成品： SemiFinished 物料类别名称
-        CASE WHEN LEFT(inv.cInvCCode, 2) IN (01,08,09) THEN 'Semi-Finished'--半 / 成品
-             ELSE 'Raw-Material'--原材料
+        CASE WHEN LEFT(inv.cInvCCode, 2) IN ( 01, 04 ) THEN 'Raw-Material'
+             ELSE 'Semi-Finished'
         END categoryName ,
         inv.cInvCCode typeName , --物料类型名称
         'Normal' statusName , --正常：Normal 核签中： Approving 失效：Invalid 物料状态名称
@@ -578,9 +578,9 @@ SELECT  inv.cInvCode itemNo , --物料编码
         inv.cEnglishName en , --英文描述 
         inv.cInvName zh , --中文描述  
         CAST(inv.pubufts AS BIGINT) ts
-FROM    UFDATA_100_2019..Inventory inv ;
+FROM    UFDATA_999_2019..Inventory inv ;
 GO
- 
+
 GO
 --增量
 ALTER PROCEDURE [dbo].[p_zzp_load_AA_Inventory]
@@ -720,9 +720,9 @@ SELECT
             '' en , --英文描述 
             bom.VersionDesc zh , --中文描述 
             CAST(bas.Ufts AS BIGINT) ts
-FROM        UFDATA_100_2019..bom_parent parent
-INNER JOIN  UFDATA_100_2019..bom_bom bom ON parent.BomId = bom.BomId
-INNER JOIN  UFDATA_100_2019..bas_part bas ON parent.ParentId = bas.PartId ;
+FROM        UFDATA_999_2019..bom_parent parent
+INNER JOIN  UFDATA_999_2019..bom_bom bom ON parent.BomId = bom.BomId
+INNER JOIN  UFDATA_999_2019..bas_part bas ON parent.ParentId = bas.PartId ;
 
 GO
 
@@ -748,9 +748,9 @@ SELECT
             '' en , --英文描述 
             '' zh , --中文描述 
             CAST(op.Ufts AS BIGINT) ts
-FROM        UFDATA_100_2019..bom_opcomponent op
-INNER JOIN  UFDATA_100_2019..bas_part bas ON op.ComponentId = bas.PartId
-INNER JOIN  UFDATA_100_2019..bom_opcomponentopt opt ON opt.OptionsId = op.OptionsId ;
+FROM        UFDATA_999_2019..bom_opcomponent op
+INNER JOIN  UFDATA_999_2019..bas_part bas ON op.ComponentId = bas.PartId
+INNER JOIN  UFDATA_999_2019..bom_opcomponentopt opt ON opt.OptionsId = op.OptionsId ;
   
 GO
 
@@ -766,10 +766,10 @@ SELECT      op.ComponentId  ,
             '' en , --英文描述 
             '' zh , --中文描述  
             CAST(op.Ufts AS BIGINT) ts
-FROM        UFDATA_100_2019..bom_opcomponent op
-INNER JOIN  UFDATA_100_2019..bas_part bas ON op.ComponentId = bas.PartId
-INNER JOIN  UFDATA_100_2019..bom_opcomponentopt opt ON opt.OptionsId = op.OptionsId
-INNER JOIN  UFDATA_100_2019..bom_opcomponentsub sub ON sub.OpComponentId = opt.OptionsId ;
+FROM        UFDATA_999_2019..bom_opcomponent op
+INNER JOIN  UFDATA_999_2019..bas_part bas ON op.ComponentId = bas.PartId
+INNER JOIN  UFDATA_999_2019..bom_opcomponentopt opt ON opt.OptionsId = op.OptionsId
+INNER JOIN  UFDATA_999_2019..bom_opcomponentsub sub ON sub.OpComponentId = opt.OptionsId ;
 GO
   
 GO
@@ -907,12 +907,12 @@ SELECT      mo.MoId ,
             '' en , --英文描述
             '' zh , --中文描述
             CAST(mo.Ufts AS BIGINT) ts
-FROM        UFDATA_100_2019..mom_order mo
-INNER JOIN  UFDATA_100_2019..mom_orderdetail mos ON mos.MoId = mo.MoId
+FROM        UFDATA_999_2019..mom_order mo
+INNER JOIN  UFDATA_999_2019..mom_orderdetail mos ON mos.MoId = mo.MoId
                                                     AND mos.SortSeq = (SELECT   MIN(SortSeq)
-                                                                       FROM     UFDATA_100_2019..mom_orderdetail
+                                                                       FROM     UFDATA_999_2019..mom_orderdetail
                                                                        WHERE    mos.MoId = mo.MoId) ;
---INNER JOIN  UFDATA_100_2019..Inventory inv  ON inv.cInvCode=mos.InvCode
+--INNER JOIN  UFDATA_999_2019..Inventory inv  ON inv.cInvCode=mos.InvCode
 GO
 
 GO
@@ -925,8 +925,8 @@ SELECT      mo.MoId ,
             Define22 sn , --机器序列号
             Define22 virtualSN , --虚 拟 机 器序列号 //等待确认
             CAST(mo.Ufts AS BIGINT) ts
-FROM        UFDATA_100_2019..mom_order mo
-INNER JOIN  UFDATA_100_2019..mom_orderdetail mos ON mos.MoId = mo.MoId AND RelsTime IS NOT null
+FROM        UFDATA_999_2019..mom_order mo
+INNER JOIN  UFDATA_999_2019..mom_orderdetail mos ON mos.MoId = mo.MoId AND RelsTime IS NOT null
   
 GO
 
@@ -946,8 +946,8 @@ SELECT      mo.MoId ,
             '0' validateTimes , --条码验证次数
             '1' usage , --单个使用量
             CAST(mo.Ufts AS BIGINT) ts
-FROM        UFDATA_100_2019..mom_order mo
-INNER JOIN  UFDATA_100_2019..mom_orderdetail mos ON mos.MoId = mo.MoId ;
+FROM        UFDATA_999_2019..mom_order mo
+INNER JOIN  UFDATA_999_2019..mom_orderdetail mos ON mos.MoId = mo.MoId ;
 GO
  
   
@@ -1092,8 +1092,8 @@ SELECT      dl.cDLCode workOrderName , --工单名称
             '' en , --英文描述 
             dls.cMemo zh , --中文描述  
             CAST(dl.ufts AS BIGINT) ts
-FROM        UFDATA_100_2019..DispatchList dl
-LEFT JOIN   UFDATA_100_2019..DispatchLists dls ON dls.DLID = dl.DLID
+FROM        UFDATA_999_2019..DispatchList dl
+LEFT JOIN   UFDATA_999_2019..DispatchLists dls ON dls.DLID = dl.DLID
 WHERE       dls.cDefine22 IS NOT NULL
             AND dl.dverifysystime IS NOT NULL
             AND dls.iQuantity > 0 ;

@@ -114,6 +114,9 @@
     <Content Include="db\20190507\写库_产成品入库.sql" />
     <Content Include="db\20190507\写库_红字材料出库.sql" />
     <Content Include="db\20190507\飞博MES对接_Dev.sql" />
+    <Content Include="db\20190508\script.sql" />
+    <Content Include="db\20190508\飞博MES对接_Dev.sql" />
+    <Content Include="db\20190508\飞博MES对接_Relation.sql" />
     <Content Include="lib\Interop.MSXML2.dll" />
     <Content Include="lib\Newtonsoft.Json.dll" />
     <Content Include="lib\ZM.Core.dll" />

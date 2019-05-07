@@ -34,11 +34,11 @@ namespace FeiBo.Synchro.Core
         /// <summary>
         /// 帐套号
         /// </summary>
-        public static string sender = "999";
+        public static string sender = "100";
         /// <summary>
         /// 请求端口
         /// </summary>
-        public static string host = "192.168.28.128";//"120.55.47.63";
+        public static string host = "192.168.37.129";
         /// <summary>
         /// 记录错误日志-API
         /// </summary>

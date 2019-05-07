@@ -8,13 +8,17 @@ namespace FeiBo.Synchro.Core
     public class Factory
     {
         /// <summary>
+        /// 仅供查询
+        /// </summary>
+        public static readonly TDBDataContext fdbContext = new TDBDataContext();
+        /// <summary>
         /// 执行
         /// </summary>
         /// <param name="dbContext">上下文对象</param>
         public static void Run(Action<TDBDataContext> dbContext)
         {
             using (TDBDataContext dataContext = new TDBDataContext())
-            { 
+            {
                 dbContext(dataContext);
             }
         }
